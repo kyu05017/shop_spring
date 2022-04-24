@@ -9,12 +9,17 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
 @Service
+// 비즈니스 로직을 담당하는 서비스 계층 클래스에 @Transactional 어노테이션을 선언합니다.
+// 로직을 처리하다가 에러가 발생하였다면, 변경된 데이터를 오직을 수행하기 이전 상태로 콜백합니다.
 @Transactional
+// 빈을 주입하는 방법으로 @Autowired 어노테이션을 이용하거나, 필드 주입 (Setter) 생성자 주입을 이용하는 방법이 있습니다.
+// @RequiredArgsConstructor 어노테이션은 final @NonNull이 붙은 필드에 생성자를 생성해 줍니다. 빈에 생성자가 1개이고,
+// 생성자의 파라미터 타입이 빈으로 등록이 가능하다면 @Autowired 어노테이션 없이 의조성 주입이 가능합니다.
 @RequiredArgsConstructor
 public class MemberService {
 
 
-    private final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;//final @NonNull이 붙은 필드에 생성자를 생성해 줍니다.
 
     public Member saveMember(Member member) {
         validataDuplicateMember(member);
@@ -27,6 +32,7 @@ public class MemberService {
 
         if(findMember != null) {
             throw new IllegalStateException("이미 가입된 회원입니다.");
+            // 이미 가입된 회원의 경우 IllegalStateException 예외를 발생시킵니다.
         }
     }
 }
