@@ -1,4 +1,4 @@
-package com.shop;
+package com.shop.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +11,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public List<String> hello() {
-        return Arrays.asList("강사님 성공했습니다.", "ㅜㅜsdfㅠㅜsdfsㅠㅜㅠㅠ");
+        return Arrays.asList("김규석 스프링 공부", "리이액트 연동","2022-04-24");
 
     }
 }
