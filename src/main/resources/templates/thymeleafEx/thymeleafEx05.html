@@ -10,17 +10,19 @@
     <h1> 링크처리 예제 페이지 </h1>
 
     <div>
-        <a href="@{/thymeleaf/ex01}"> 예제1 페이지로 이동</a>
+        <a th:href="@{/thymeleaf/ex01}"> 예제1 페이지로 이동</a>
     </div>
     <div>
-        <a href="@{/thymeleaf/ex02}"> 예제2 페이지로 이동</a>
+        <a th:href="@{/thymeleaf/ex02}"> 예제2 페이지로 이동</a>
     </div>
     <div>
-        <a href="@{/thymeleaf/ex03}"> 예제3 페이지로 이동</a>
+        <a th:href="@{/thymeleaf/ex03}"> 예제3 페이지로 이동</a>
     </div>
     <div>
-        <a href="@{/thymeleaf/ex05}"> 예제4 페이지로 이동</a>
+        <a th:href="@{/thymeleaf/ex04}"> 예제4 페이지로 이동</a>
     </div>
-
+    <div>
+        <a th:href="@{/thymeleaf/ex06(param1 = '파라미터 데이터 1', param2 = '파라미터 데이터 2')}"> 예제6 페이지로 이동</a>
+    </div>
 </body>
 </html>
