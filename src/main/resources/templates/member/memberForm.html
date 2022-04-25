@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="css">
+    <style>
+        .fieldErrors {
+            color: #bd2130;
+        }
+
+    </style>
+</th:block>
+
+<th:block layout:fragment="script">
+        <script th:inline="javascript">
+            $(document).ready(function(){
+                var errorsMessage
+
+
+            }
+        </script>
+</th:block>
+</html>
