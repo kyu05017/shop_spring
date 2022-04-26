@@ -4,6 +4,10 @@ package com.shop.service;
 import com.shop.entity.Member;
 import com.shop.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -16,8 +20,8 @@ import javax.transaction.Transactional;
 // @RequiredArgsConstructor 어노테이션은 final @NonNull이 붙은 필드에 생성자를 생성해 줍니다. 빈에 생성자가 1개이고,
 // 생성자의 파라미터 타입이 빈으로 등록이 가능하다면 @Autowired 어노테이션 없이 의조성 주입이 가능합니다.
 @RequiredArgsConstructor
-public class MemberService {
-
+public class MemberService implements UserDetailsService {
+                            // memberService가 UserDetailsService를 구현합니다.
 
     private final MemberRepository memberRepository;//final @NonNull이 붙은 필드에 생성자를 생성해 줍니다.
 
@@ -34,5 +38,24 @@ public class MemberService {
             throw new IllegalStateException("이미 가입된 회원입니다.");
             // 이미 가입된 회원의 경우 IllegalStateException 예외를 발생시킵니다.
         }
+    }
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        // UserDetailsService 인터페이스의 loadUserByUsername메소드를 오버라이딩 합니다.
+        // 로그인할 유저의 email을 파라미터로 전달받습니다.
+
+        Member member = memberRepository.findByEmail(email);
+
+        if(member == null){
+            throw new UsernameNotFoundException(email);
+        }
+
+        // UserDetail을 구현하고 있는 User객체를 반환하비다. User객체를 생성하기 위해 생성자로
+        // 회원의 이메일 비밀번호 role을 파라미터로 넙겨 줍니다.
+        return User.builder()
+                .username(member.getEmail())
+                .password(member.getPassword())
+                .roles(member.getRole().toString())
+                .build();
     }
 }

@@ -39,6 +39,8 @@ public class Member {
     private Role role;
 
     public static Member createMember(MemberFormDto memberFormDto, PasswordEncoder passwordEncoder){
+    //  Member 엔티티를 생성하는 메소드 입니다. Member엔티티에 회원을 생성하는 메소드를 만들어서
+        //  관리한다면 코드가 변경되도라도 한 군데만 수정하는 되는 이점이 있습니다.
 
         Member member = new Member();
 
@@ -46,6 +48,7 @@ public class Member {
         member.setEmail(memberFormDto.getEmail());
         member.setAddress(memberFormDto.getAddress());
 
+        // 스프링 시큐리티 설정 클래스에 등록한 BCryptPasswordEncoder Bean을 파라미터로 넘겨서 비밀번호를 함호화 합니다.
         String password = passwordEncoder.encode(memberFormDto.getPassword());
 
         member.setPassword(password);
