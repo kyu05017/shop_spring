@@ -1,6 +1,5 @@
 package com.shop.service;
 
-
 import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +16,6 @@ import javax.persistence.EntityNotFoundException;
 public class ItemImgService {
 
     @Value("${itemImgLocation}")
-    // @Value 어노테이션을 통해 어플리케이션.프로퍼티스 파일에 등록한 itemimglocation 값을 불러와서
-    // itemImgLocation 변수에 넣어 줍니다.
     private String itemImgLocation;
 
     private final ItemImgRepository itemImgRepository;
@@ -34,8 +31,6 @@ public class ItemImgService {
         if(!StringUtils.isEmpty(oriImgName)){
             imgName = fileService.uploadFile(itemImgLocation, oriImgName,
                     itemImgFile.getBytes());
-            // 사용자가 상품의 이미지를 등록했다면 저장할 경로와 파일의 이름, 파일을 파일의 바이트 배열을 파일 업로드 파라미터로
-            // uploadFile 메소드를 호풀합니다. 호출결과에 따라 저장된 파일의 이름을 imgname 변수에 저장합니다.
             imgUrl = "/images/item/" + imgName;
         }
 
