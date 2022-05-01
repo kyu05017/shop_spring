@@ -62,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //비밀번호를 데이터베이스에 그대로 저장했을 경우, 데이터 베이스가 해킹당하면 고객의 회원 정보가 그대로 노출됩니다.
     //이를 해결하기 위한 BCryptPasswordEncoder의 해쉬 함수를 이용하여 비밀번호를 암호화하여 저장
-    @Bean
+    @Bean // auto
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }

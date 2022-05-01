@@ -56,7 +56,7 @@ class MemberController {
         this.createMember(email,password);
         mockMvc.perform(formLogin().userParameter("email")
                 // 회원가입 메소드를 실행 후 가입된 회원 정보로 로그인이 되는지 테스트를 진행 합니다.
-                //userParameter()를 이용ㅎ여 이메일을 아이디로 세팅하고 로그인 URL에 용청
+                //userParameter()를 이용하여 이메일을 아이디로 세팅하고 로그인 URL에 용청
                         .loginProcessingUrl("/members/login")
                         .user(email).password(password))
                 //로그인이 성공하여 인증되었다면 테스트 코드가 통과합니다.
