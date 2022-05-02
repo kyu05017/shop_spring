@@ -26,11 +26,11 @@ public class MemberService implements UserDetailsService {
     private final MemberRepository memberRepository;//final @NonNull이 붙은 필드에 생성자를 생성해 줍니다.
 
     public Member saveMember(Member member) {
-        validataDuplicateMember(member);
+        validateDuplicateMember(member);
         return memberRepository.save(member);
     }
 
-    public void validataDuplicateMember(Member member){
+    public void validateDuplicateMember(Member member){
 
         Member findMember = memberRepository.findByEmail(member.getEmail());
 
