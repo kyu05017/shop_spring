@@ -18,10 +18,11 @@ MySQL <br>
 2022.04.20 ~ 2022.04.25
 
 # 5. 시연모습
-![1](https://user-images.githubusercontent.com/98489230/174473261-08fe3c38-01ea-4bc1-95a0-7923d6f9e6b2.png)
-![2](https://user-images.githubusercontent.com/98489230/174473259-d3479d30-d010-402c-a99a-c906cad5e8f7.png)
-![3](https://user-images.githubusercontent.com/98489230/174473255-27183453-d968-4d0d-b974-9189bfe8dacd.png)
-![4](https://user-images.githubusercontent.com/98489230/174473263-5da183a3-15fd-46b8-a12e-477e5dd2ecbf.png)
-![5](https://user-images.githubusercontent.com/98489230/174473258-b7e3421d-a497-4c06-a0dc-2c1dd74d929e.png)
-![6](https://user-images.githubusercontent.com/98489230/174473264-3a32dad6-18b1-4b5a-98f7-3688f4595748.png)
+<img src="https://user-images.githubusercontent.com/98489230/174473261-08fe3c38-01ea-4bc1-95a0-7923d6f9e6b2.png" width="400px">
+<img src="https://user-images.githubusercontent.com/98489230/174473259-d3479d30-d010-402c-a99a-c906cad5e8f7.png" width="400px">
+<img src="https://user-images.githubusercontent.com/98489230/174473255-27183453-d968-4d0d-b974-9189bfe8dacd.png" width="400px">
+<img src="https://user-images.githubusercontent.com/98489230/174473263-5da183a3-15fd-46b8-a12e-477e5dd2ecbf.png" width="400px">
+<img src="https://user-images.githubusercontent.com/98489230/174473258-b7e3421d-a497-4c06-a0dc-2c1dd74d929e.png" width="400px">
+<img src="https://user-images.githubusercontent.com/98489230/174473264-3a32dad6-18b1-4b5a-98f7-3688f4595748.png" width="400px">
+
 
